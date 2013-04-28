@@ -28,6 +28,7 @@ NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'teramako/jscomplete-vim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tomasr/molokai'
 filetype plugin indent on
 
 NeoBundleCheck
@@ -35,7 +36,7 @@ NeoBundleCheck
 " ===============================
 " edit
 " ===============================
-colorscheme inspiration678763
+colorscheme molokai
 syntax on
 
 " statusline
