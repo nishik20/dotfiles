@@ -50,3 +50,5 @@ alias ll="ls -l"
 alias du="du -h"
 alias df="df -h"
 alias vi="vim"
+
+eval "$(rbenv init -)"
