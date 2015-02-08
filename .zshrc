@@ -51,4 +51,10 @@ alias du="du -h"
 alias df="df -h"
 alias vi="vim"
 
-eval "$(rbenv init -)"
+export GOROOT=$HOME/go
+export GOPATH=$HOME/gopath
+export PATH=/usr/local/bin:$GOROOT/bin:$GOPATH/bin:$PATH
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/yunishik/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
