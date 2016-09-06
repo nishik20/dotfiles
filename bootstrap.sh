@@ -1,8 +1,13 @@
-#!/bin/sh
+#!/bin/bash -eu
 
-ln -sf /home/yunishik/dotfiles/.vim ~/.vim
-ln -sf /home/yunishik/dotfiles/.vimrc ~/.vimrc
-ln -sf /home/yunishik/dotfiles/.zshrc ~/.zshrc
-ln -sf /home/yunishik/dotfiles/.zsh_profile ~/.zsh_profile
+echo "Clone dotfiles repository..."
+git clone --recursive https://github.com/nishik20/dotfiles.git $HOME/.dotfiles
 
-sudo rpm -ivh http://swiftsignal.com/packages/centos/6/x86_64/the-silver-searcher-0.14-1.el6.x86_64.rpm
+echo "Symlink dotfiles..."
+for f in $(find . -name ".*" -maxdepth 1); do
+    name=$(echo $f | sed -e 's|\.\/||')
+    if [ $name != '.' ]; then
+        cmd="ln -sf $HOME/.dotfiles/$name $HOME/$name"
+        echo $cmd && $cmd
+    fi
+done
