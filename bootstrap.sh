@@ -12,3 +12,10 @@ for f in $(find . -name ".*" -maxdepth 1); do
     fi
 done
 popd
+
+echo "Installing package..."
+if [ -f /etc/debian_version ]; then
+    sudo apt-get install -y zsh silversearcher-ag
+elif [ -f /etc/redhat-release ]; then
+    sudo yum install -y zsh the_silver_searcher
+fi
