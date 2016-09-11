@@ -7,7 +7,6 @@ echo "Symlink dotfiles..."
 for f in $(find $HOME/.dotfiles -name ".*" -maxdepth 1); do
     name=$(echo $f | sed -e 's|\.\/||')
     if [ $name != "." -o $name != ".git" ]; then
-        cmd="ln -sf $HOME/.dotfiles/$name $HOME/$name"
-        echo $cmd && $cmd
+        ln -sf $HOME/.dotfiles/$name $HOME/$name
     fi
 done
