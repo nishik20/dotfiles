@@ -1,0 +1,9 @@
+[user]
+	name = Yu Nishikawa
+	email = y.nishi0320@gmail.com
+[alias]
+	st = status
+	di = diff
+	co = checkout
+	br = branch
+	nmerge = merge --no-ff
